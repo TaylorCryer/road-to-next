@@ -14,10 +14,11 @@ const TicketPage = async ({params}: TicketPageProps) => {
   if (!ticket) {
     return <div>Ticket not found</div>
   }
-  return 
+  return (
      <div>
-     <h2 className="text-lg">{ticket?.title}</h2>;
+     <h2 className="text-lg">{ticket?.title}</h2>
      <p className="text-sm">{ticket?.content}</p>
      </div>
+  )
 }
 export default TicketPage;

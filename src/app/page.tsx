@@ -5,9 +5,9 @@ const HomePage = () => {
     <div>
       <h2>HomePage</h2>
 
-      <link href="/tickets" className="underline">
+      <Link href="/tickets" className="underline">
         Go to Tickets
-      </link>
+      </Link>
     </div>
   );
 }
