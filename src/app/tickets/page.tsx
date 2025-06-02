@@ -29,7 +29,7 @@ const TicketsPage = () => {
             <p className="text-sm text-slate-500 truncate">{ticket.content}</p>
 
             <Link href={ticketPath(ticket.id)} className="text-sm underline">
-              View
+              VIEW
             </Link>
           </div>
         ))}
