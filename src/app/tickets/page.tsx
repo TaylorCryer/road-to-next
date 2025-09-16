@@ -7,11 +7,11 @@ import { Heading } from "@/components/heading";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 
 const TICKETS_ICON = {
   OPEN: <LucideFileText />,
@@ -32,6 +32,7 @@ const TicketsPage = () => {
                 <span className="truncate">{ticket.title}</span>
               </CardTitle>
             </CardHeader>
+            <Separator />
             <CardContent>
               <span className="line-clamp-3 whitespace-break-spaces">
                 {ticket.content}
