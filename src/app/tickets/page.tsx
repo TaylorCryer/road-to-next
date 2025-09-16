@@ -3,6 +3,7 @@ import Link from "next/link";
 import { initialTickets } from "@/data";
 import { ticketPath } from "@/paths";
 import { LucideCircleCheck, LucideFileText, LucidePencil } from "lucide-react";
+import { Heading } from "@/components/heading";
 import {
   Card,
   CardContent,
@@ -21,13 +22,7 @@ const TICKETS_ICON = {
 const TicketsPage = () => {
   return (
     <div className="flex-1 flex flex-col gap-y-8">
-      <div>
-        <h2 className="text-3xl font-bold tracking-tight">TicketsPage</h2>
-        <p className="text-sm text-muted-foreground">
-          All your tickets at one place
-        </p>
-      </div>
-
+      <Heading title="Tickets" description="All your tickets at one place" />
       <div className="flex-1 flex flex-col items-center gap-y-4 animate-fade-in-from-top">
         {initialTickets.map((ticket) => (
           <Card key={ticket.id} className="w-full max-w-[420px]">

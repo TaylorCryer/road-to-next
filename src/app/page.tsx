@@ -1,3 +1,4 @@
+import { Heading } from "@/components/heading";
 import Link from "next/link";
 
 const HomePage = () => {
@@ -9,6 +10,8 @@ const HomePage = () => {
           Your home place to start
         </p>
       </div>
+
+      <Heading title="Tickets" description="All your tickets at one place" />
 
       <div className="flex-1 flex flex-col items-center">
         <Link href="/tickets" className="underline">
