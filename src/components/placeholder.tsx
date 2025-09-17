@@ -1,5 +1,5 @@
 import { LucideMessageSquareWarning } from "lucide-react";
-import { cloneElement, ReactElement, ReactNode } from "react";
+import { cloneElement, ReactElement } from "react";
 
 type PlaceholderProps = {
   label: string;
