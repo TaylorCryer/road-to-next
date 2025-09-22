@@ -1,13 +1,8 @@
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { ticketPath } from "@/paths";
+import { LucideSquareArrowOutUpRight } from "lucide-react";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ticketPath } from "@/paths";
 import { TICKETS_ICON } from "./constants";
 import { Ticket } from "./types";
 
@@ -16,27 +11,31 @@ type TicketItemProps = {
 };
 
 const TicketItem = ({ ticket }: TicketItemProps) => {
-  return (
-    <Card key={ticket.id} className="w-full max-w-[420px]">
-      <CardHeader>
-        <CardTitle className="flex gap-x-2">
-          <span>{TICKETS_ICON[ticket.status]}</span>
-          <span className="truncate">{ticket.title}</span>
-        </CardTitle>
-      </CardHeader>
-      <Separator />
-      <CardContent>
-        <span className="line-clamp-3 whitespace-break-spaces">
-          {ticket.content}
-        </span>
-      </CardContent>
+  const detailButton = (
+    <Button variant="outline" size="icon" asChild>
+      <Link href={ticketPath(ticket.id)} className="text-sm underline">
+        <LucideSquareArrowOutUpRight className="h-4 w-4" />
+      </Link>
+    </Button>
+  );
 
-      <CardFooter>
-        <Link href={ticketPath(ticket.id)} className="text-sm underline">
-          View
-        </Link>
-      </CardFooter>
-    </Card>
+  return (
+    <div className="w-full max-w-[420px] flex gap-x-1">
+      <Card className="w-full">
+        <CardHeader>
+          <CardTitle className="flex gap-x-2">
+            <span>{TICKETS_ICON[ticket.status]}</span>
+            <span className="truncate">{ticket.title}</span>
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <span className="line-clamp-3 whitespace-break-spaces">
+            {ticket.content}
+          </span>
+        </CardContent>
+      </Card>
+      <div className="flex flex-col gap-y-1">{detailButton}</div>
+    </div>
   );
 };
 
